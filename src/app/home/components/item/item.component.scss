@@ -1,0 +1,41 @@
+@import '../../../../assets/scss/breakpoints.scss';
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__card {
+        width: 28rem;
+    }
+
+    h2 {
+        margin: 1rem;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        img {
+            width: 8rem;
+        }
+    }
+}
+
+::ng-deep .ant-card {
+    margin: 1rem;
+}
+
+@media screen and (max-width: $tablet) {
+    .item {
+        &__card {
+            width: 18rem;
+        }
+    }
+}

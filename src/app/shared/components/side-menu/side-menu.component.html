@@ -1,0 +1,32 @@
+<ul nz-menu nzMode="inline" nzTheme="dark" class="sidebar">
+  <li nz-submenu nzTitle="Game" nzIcon="setting">
+    <ul *ngIf="gameMenu.length > 0">
+      <ng-container *ngFor="let game of gameMenu">
+        <li nz-menu-item>{{ game.name }}</li>
+      </ng-container>
+    </ul>
+  </li>
+  <li nz-submenu nzTitle="Generation" nzIcon="apartment">
+    <ul>
+      <ul *ngIf="generationMenu.length > 0">
+        <ng-container *ngFor="let generation of generationMenu">
+          <li nz-menu-item>{{ generation.name }}</li>
+        </ng-container>
+      </ul>
+    </ul>
+  </li>
+  <li nz-submenu nzTitle="Location" nzIcon="aim">
+    <ul *ngIf="locationMenu.length > 0">
+      <ng-container *ngFor="let location of locationMenu">
+        <li nz-menu-item>{{ location.name }}</li>
+      </ng-container>
+    </ul>
+  </li>
+  <li nz-submenu nzTitle="Item" nzIcon="book">
+    <ul *ngIf="itemMenu.length > 0">
+      <ng-container *ngFor="let item of locationMenu">
+        <li nz-menu-item>{{ item.name }}</li>
+      </ng-container>
+    </ul>
+  </li>
+</ul>

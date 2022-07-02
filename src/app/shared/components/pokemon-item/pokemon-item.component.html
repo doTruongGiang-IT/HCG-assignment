@@ -1,0 +1,46 @@
+<div class="pokemon">
+    <ng-container *ngIf="pokemonSearch; else noSearch">
+        <nz-card nzHoverable [nzCover]="coverTemplate" (click)="showDetail(pokemonSearch)">
+            <nz-card-meta [nzTitle]="pokemonSearch.name"></nz-card-meta>
+        </nz-card>
+        <ng-template #coverTemplate>
+            <img
+                [src]="pokemonSearch.image"
+                [alt]="pokemonSearch.name" loading="lazy" />
+        </ng-template>
+    </ng-container>
+    <ng-template #noSearch>
+        <div class="pokemon__container" *ngIf="pokemons.length > 0">
+            <ng-container *ngFor="let pokemon of pokemons; let index as i">
+                <nz-card nzHoverable [nzCover]="coverTemplate" (click)="showDetail(pokemon)" class="pokemon__card">
+                    <nz-card-meta [nzTitle]="pokemon.name"></nz-card-meta>
+                </nz-card>
+                <ng-template #coverTemplate>
+                    <img
+                        [src]="pokemon.image"
+                        [alt]="pokemon.name" loading="lazy" />
+                </ng-template>
+            </ng-container>
+        </div>
+    </ng-template>
+    <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()">
+        <div *nzModalContent>
+            <div class="pokemon__detail" *ngIf="pokemonInfo">
+                <div class="pokemon__detail-image">
+                    <img
+                        [src]="pokemonInfo.image"
+                        [alt]="pokemonInfo.name" loading="lazy" />
+                </div>
+                <div class="pokemon__detail-info">
+                    <p>Name: {{ pokemonInfo.name }}</p>
+                    <p>Heigh: {{ pokemonInfo.heigh }}</p>
+                    <p>Weight: {{ pokemonInfo.weight }}</p>
+                    <div class="pokemon__detail-type">
+                        <p *ngFor="let type of pokemonInfo.type">{{ type.type.name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template *nzModalFooter></ng-template>
+    </nz-modal>
+</div>

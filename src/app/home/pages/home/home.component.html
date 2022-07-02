@@ -1,0 +1,15 @@
+<div class="home">
+    <section class="home__trailer">
+        <app-trailer></app-trailer>
+    </section>
+    <section class="home__pokemon">
+        <div class="home__pokemon-action">
+            <h2>Pokedex</h2>
+            <button nz-button nzType="primary" (click)="showMorePokemon()" [disabled]="isDisable">See more</button>
+        </div>
+        <app-pokemon-item [pokemonList]="pokemonList"></app-pokemon-item>
+    </section>
+    <section class="home__item">
+        <app-item [itemList]="itemList"></app-item>
+    </section>
+</div>

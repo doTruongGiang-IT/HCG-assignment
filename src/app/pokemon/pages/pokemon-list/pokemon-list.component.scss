@@ -1,0 +1,44 @@
+@import '../../../../assets/scss/breakpoints.scss';
+
+.pokemon-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__action {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+    }
+
+    &__search, &__filter {
+        flex: 1;
+    }
+
+    &__filter {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        & select {
+            width: 10rem;
+            height: 3rem;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .pokemon-list {
+        &__action {
+            flex-direction: column;
+        }
+
+        &__search, &__filter {
+            margin: 0.5rem;
+        }
+    }
+}

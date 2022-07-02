@@ -1,0 +1,7 @@
+<div class="search">
+    <nz-input-group nzSearch nzSize="large">
+        <input type="text" nz-input placeholder="input search text"  #searchInput
+        [value]="searchKey"
+        (input)="onChange($event)" />
+    </nz-input-group>
+</div>

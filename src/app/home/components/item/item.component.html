@@ -1,0 +1,15 @@
+<div class="item">
+    <h2>Item</h2>
+    <div class="item__container" *ngIf="items.length > 0">
+        <ng-container *ngFor="let item of items">
+            <nz-card nzHoverable [nzCover]="coverTemplate" class="item__card">
+                <nz-card-meta [nzTitle]="item.name"></nz-card-meta>
+            </nz-card>
+            <ng-template #coverTemplate>
+                <img
+                    [src]="item.image"
+                    [alt]="item.name" loading="lazy" />
+            </ng-template>
+        </ng-container>
+    </div>
+</div>

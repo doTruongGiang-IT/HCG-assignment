@@ -1,0 +1,18 @@
+<div class="pokemon-list">
+    <div class="pokemon-list__action">
+        <section class="pokemon-list__search">
+            <app-search (keyword)="search($event)"></app-search>
+        </section>
+        <section class="pokemon-list__filter">
+            <select (change)="onChange($event)" [value]="itemPerPage">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </section>
+    </div>
+    <section class="pokemon-list__content">
+        <app-pokemon-item [pokemonList]="pokemonList" [pokemonSearch]="pokemon"></app-pokemon-item>
+    </section>
+</div>

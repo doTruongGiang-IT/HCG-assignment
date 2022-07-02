@@ -1,0 +1,19 @@
+@import '../../../../assets/scss/breakpoints.scss';
+
+.trailer {
+    &__video {
+        width: 50rem;
+        height: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .trailer {
+        &__video {
+            width: 32rem;
+        }
+    }
+}
